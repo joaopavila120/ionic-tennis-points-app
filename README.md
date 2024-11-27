@@ -15,6 +15,8 @@ This project was developed for the Mobile Development course at UPF. It uses the
 
 ![image](https://github.com/user-attachments/assets/b544c844-887f-46fe-833b-458a4aacfeff)
 
+-Wolverine is the winner!
+
 ![image](https://github.com/user-attachments/assets/1d1b530f-de90-4aeb-a8f8-f2fe53b530e2)
 
 
