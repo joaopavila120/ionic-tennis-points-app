@@ -1,0 +1,60 @@
+<ion-header>
+  <ion-toolbar color="tertiary">
+    <ion-title>🎾 Jogo de Tênis 🎾</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/users"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="content">
+  <!-- Quadra -->
+  <div class="court">
+    <!-- Jogador 1 -->
+    <div class="player left">
+      <img [src]="players[0].image" alt="Jogador 1" />
+      <h4>{{ players[0].name }}</h4>
+    </div>
+
+    <!-- Linha central -->
+    <div class="center-line"></div>
+
+    <!-- Jogador 2 -->
+    <div class="player right">
+      <img [src]="players[1].image" alt="Jogador 2" />
+      <h4>{{ players[1].name }}</h4>
+    </div>
+  </div>
+
+  <!-- Placar em duas colunas -->
+  <div class="scoreboard">
+    <div class="score-column">
+      <h3>{{ players[0].name }}</h3>
+      <p>Sets: {{ players[0].sets }}</p>
+      <p>Games: {{ players[0].games }}</p>
+      <p>Pontos: {{ scoreLabels[players[0].points] }}</p>
+    </div>
+    <div class="score-column">
+      <h3>{{ players[1].name }}</h3>
+      <p>Sets: {{ players[1].sets }}</p>
+      <p>Games: {{ players[1].games }}</p>
+      <p>Pontos: {{ scoreLabels[players[1].points] }}</p>
+    </div>
+  </div>
+
+  <!-- Botões para marcar pontos -->
+  <div class="controls">
+    <ion-button expand="block" color="success" (click)="incrementScore(1)">
+      Ponto para {{ players[0].name }}
+    </ion-button>
+    <ion-button expand="block" color="success" (click)="incrementScore(2)">
+      Ponto para {{ players[1].name }}
+    </ion-button>
+  </div>
+
+  <!-- Fim de jogo -->
+  <div *ngIf="gameOver" class="game-over">
+    <h2>🎉 Jogo Encerrado! {{ winner }} venceu! 🎉</h2>
+    <ion-button expand="block" color="danger" (click)="restartGame()">Reiniciar Jogo</ion-button>
+  </div>
+</ion-content>

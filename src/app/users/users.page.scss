@@ -1,0 +1,43 @@
+// Fundo da página
+.content {
+  --background: #f4f4f4; /* Fundo cinza claro */
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  height: 100%;
+}
+
+// Botão "Adicionar Novo Jogador"
+.add-player {
+  margin: 20px 0;
+}
+
+// Lista de jogadores estilizada
+.user-list {
+  background: #ffffff; /* Fundo branco para a lista */
+  border-radius: 10px;
+  padding: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+ion-thumbnail {
+  --size: 60px; /* Tamanho da miniatura */
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+ion-label h2 {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #333;
+}
+
+ion-label p {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+// Botão para iniciar jogo
+.start-match {
+  margin-top: 20px;
+}

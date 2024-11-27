@@ -1,0 +1,63 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <!-- Botão de Voltar -->
+      <ion-back-button defaultHref="/users"></ion-back-button>
+    </ion-buttons>
+    <ion-title>{{ userId === 0 ? 'Novo Usuário' : 'Editar Usuário' }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form [formGroup]="userForm" (ngSubmit)="saveUser()">
+    <ion-item>
+      <ion-label position="floating">Nome</ion-label>
+      <ion-input type="text" formControlName="name"></ion-input>
+    </ion-item>
+    <ion-text color="danger" *ngIf="userForm.get('name')?.invalid && userForm.get('name')?.touched">
+      O nome é obrigatório.
+    </ion-text>
+
+    <ion-item>
+      <ion-label position="floating">Data de Nascimento</ion-label>
+      <ion-input type="date" formControlName="birthDate"></ion-input>
+    </ion-item>
+    <ion-text color="danger" *ngIf="userForm.get('birthDate')?.invalid && userForm.get('birthDate')?.touched">
+      A data de nascimento é obrigatória.
+    </ion-text>
+
+    <ion-item>
+      <ion-label>Sexo</ion-label>
+      <ion-select formControlName="gender">
+        <ion-select-option value="Masculino">Masculino</ion-select-option>
+        <ion-select-option value="Feminino">Feminino</ion-select-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Altura (m)</ion-label>
+      <ion-input type="number" step="0.01" formControlName="height"></ion-input>
+    </ion-item>
+    <ion-text color="danger" *ngIf="userForm.get('height')?.invalid && userForm.get('height')?.touched">
+      A altura é obrigatória.
+    </ion-text>
+
+    <ion-item>
+      <ion-label position="floating">Peso (kg)</ion-label>
+      <ion-input type="number" step="0.1" formControlName="weight"></ion-input>
+    </ion-item>
+    <ion-text color="danger" *ngIf="userForm.get('weight')?.invalid && userForm.get('weight')?.touched">
+      O peso é obrigatório.
+    </ion-text>
+
+    <ion-item>
+      <ion-label>Mão Dominante</ion-label>
+      <ion-select formControlName="handedness">
+        <ion-select-option value="Destro">Destro</ion-select-option>
+        <ion-select-option value="Canhoto">Canhoto</ion-select-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-button expand="block" type="submit" [disabled]="userForm.invalid">Salvar</ion-button>
+  </form>
+</ion-content>

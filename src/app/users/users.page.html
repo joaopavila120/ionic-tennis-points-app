@@ -1,0 +1,41 @@
+<ion-header>
+  <ion-toolbar color="tertiary">
+    <ion-title>Jogadores</ion-title>
+    <ion-buttons slot="end">
+      <ion-button color="danger" (click)="logout()">🚪 Logout</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="content">
+  <!-- Botão para adicionar um novo jogador -->
+  <ion-button expand="block" color="success" routerLink="/user-edit/0">
+    ➕ Adicionar Novo Jogador
+  </ion-button>
+
+  <!-- Lista de usuários -->
+  <ion-list class="user-list">
+    <ion-item *ngFor="let user of users" (click)="selectUser(user.id)">
+      <!-- Miniatura do jogador -->
+      <ion-thumbnail slot="start">
+        <img [src]="user.image" alt="Imagem de {{ user.name }}" />
+      </ion-thumbnail>
+
+      <!-- Nome e data de nascimento -->
+      <ion-label>
+        <h2>{{ user.name }}</h2>
+        <p>Data de Nascimento: {{ user.birthDate }}</p>
+      </ion-label>
+
+      <!-- Botão para editar -->
+      <ion-button fill="outline" color="primary" (click)="editUser(user.id)" slot="end">
+        ✏️ Editar
+      </ion-button>
+    </ion-item>
+  </ion-list>
+
+  <!-- Botão para iniciar jogo -->
+  <ion-button *ngIf="selectedUserId" expand="block" color="tertiary" (click)="beginMatch()">
+    🎾 Iniciar jogo com {{ selectedUserName }}
+  </ion-button>
+</ion-content>

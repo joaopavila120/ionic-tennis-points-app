@@ -1,0 +1,48 @@
+// Fundo da tela
+.content {
+  --background: url('/assets/players-background.jpg') no-repeat center center / cover;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+}
+
+// Lista de usuários estilizada
+.user-list {
+  margin: 20px 0;
+}
+
+ion-thumbnail {
+  --size: 60px; /* Tamanho da miniatura */
+  border-radius: 50%;
+  overflow: hidden;
+  border: 2px solid #fff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+ion-label h2 {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #fff;
+}
+
+ion-label p {
+  font-size: 0.9rem;
+  color: #d3d3d3;
+}
+
+ion-item {
+  background: rgba(0, 0, 0, 0.6);
+  border-radius: 8px;
+  margin-bottom: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+ion-item:hover {
+  transform: scale(1.02);
+  transition: transform 0.2s;
+}
+
+ion-button {
+  font-weight: bold;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
