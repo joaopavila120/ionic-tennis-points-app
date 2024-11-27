@@ -4,10 +4,15 @@ This project was developed for the Mobile Development course at UPF. It uses the
 
 ## Features
 - Login screen.
-- ![image](https://github.com/user-attachments/assets/87598652-05ce-492c-9d5e-8f2de8ed48b3)
+  
+![image](https://github.com/user-attachments/assets/87598652-05ce-492c-9d5e-8f2de8ed48b3)
+
 - Screen to list and manage players (add, edit, and start matches).
-- ![image](https://github.com/user-attachments/assets/b46ade4d-a920-4aa8-9454-9a010d3c9308)
+  
+![image](https://github.com/user-attachments/assets/b46ade4d-a920-4aa8-9454-9a010d3c9308)
+
 - Tennis match simulation with official rules.
+
 ![image](https://github.com/user-attachments/assets/b544c844-887f-46fe-833b-458a4aacfeff)
 
 ## Author
